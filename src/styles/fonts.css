@@ -1,0 +1,20 @@
+@font-face {
+    font-family: "Rubik";
+    src: url('../../public/fonts/Foco_A_Rg.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Rubik";
+    src: url('../../public/fonts/Foco_A_Rg.ttf');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Rubik";
+    src: url('../../public/fonts/Foco_A_It.ttf');
+    font-weight: normal;
+    font-style: italic;
+}
