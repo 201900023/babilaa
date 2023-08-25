@@ -62,7 +62,7 @@ const PostCard = ({ post }: PostCardProps) => {
     );
   };
 
-
+  //copies link to clipboard
   const copy = () => {
     toast('copied', {
       type: 'success',
