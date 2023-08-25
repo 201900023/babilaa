@@ -1,12 +1,11 @@
-import { unstable_getServerSession } from 'next-auth';
-import { GetServerSidePropsContext } from 'next/types';
-import SuggestedUsersList from '@/components/explore/suggested-users-list';
-import SuggestedCommunitiesList from '@/components/explore/suggested-communities-list';
-import FallbackCard from '@/components/common/fallback-card';
-import ExploreLayout from '@/components/layouts/explore-layout';
-import Head from 'next/head';
-import useExplore from '@/components/explore/use-explore';
-import { authOptions } from '../api/auth/[...nextauth]';
+import { unstable_getServerSession } from "next-auth";
+import { GetServerSidePropsContext } from "next/types";
+import SuggestedUsersList from "@/components/explore/suggested-users-list";
+import FallbackCard from "@/components/common/fallback-card";
+import ExploreLayout from "@/components/layouts/explore-layout";
+import Head from "next/head";
+import useExplore from "@/components/explore/use-explore";
+import { authOptions } from "../api/auth/[...nextauth]";
 
 const ExplorePage = () => {
   const { isNotExploreData } = useExplore();
@@ -32,7 +31,6 @@ const ExplorePage = () => {
           <>
             <SuggestedUsersList />
             <div className="mt-10" />
-            <SuggestedCommunitiesList />
           </>
         )}
       </ExploreLayout>
@@ -50,7 +48,7 @@ export async function getServerSideProps(context: GetServerSidePropsContext) {
   if (!session) {
     return {
       redirect: {
-        destination: '/api/auth/signin',
+        destination: "/api/auth/signin",
         permanent: false,
       },
     };

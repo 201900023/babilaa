@@ -162,15 +162,6 @@ export const useFollowingQuery = (userId: string) =>
 export const useFollowersQuery = (userId: string) =>
   trpc.useQuery(["user.getFollowers", { userId }]);
 
-export const useCommunitiesQuery = (category?: string, filter?: string) =>
-  trpc.useInfiniteQuery(
-    ["community.getAll", { categoryId: category, filter }],
-    {
-      getNextPageParam: (lastPage) => lastPage.nextCursor,
-      keepPreviousData: true,
-    }
-  );
-
 export const useCommunityPostsQuery = ({
   communityId,
   sort,
@@ -201,26 +192,12 @@ export const useCommunityPostsQuery = ({
     }
   );
 
-export const useCommunityDetailsQuery = (communityId: string) =>
-  trpc.useQuery(["community.getById", { id: communityId }], {
-    retry: false,
-  });
-
-export const useCommunityMembersQuery = (communityId: string) =>
-  trpc.useQuery(["community.getMembers", { communityId }]);
-
-export const usePopularCommunitiesQuery = () =>
-  trpc.useQuery(["community.popular"]);
-
 export const useSearchUsersQuery = (searchPhrase: string) => {
   return trpc.useQuery(["user.getBySearchPhrase", { searchPhrase }], {
     keepPreviousData: true,
     // enabled: !!searchPhrase,
   });
 };
-
-export const useCategoryQuery = () =>
-  trpc.useQuery(["community.getAllCategories"]);
 
 export const useSuggestedUsersQuery = (limit?: number) =>
   trpc.useQuery(["explore.getSuggestedUsers", { limit }]);

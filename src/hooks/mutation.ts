@@ -94,7 +94,6 @@ export const useToggleFollowUserMutation = (
 
       utils.invalidateQueries(["user.getFollowers"]);
       utils.invalidateQueries(["user.getFollowing"]);
-      utils.invalidateQueries(["community.getMembers"]);
       utils.invalidateQueries(["explore.getSuggestedUsers"]);
       onSuccessCb();
     },
@@ -120,60 +119,6 @@ export const useRemovePostMutation = () => {
   const mutation = trpc.useMutation("post.remove", {
     onSuccess() {
       invalidateAll(utils);
-    },
-  });
-
-  return mutation.mutate;
-};
-
-export const useAddCommunity = (onSuccessCb: () => void) => {
-  const utils = trpc.useContext();
-  const mutation = trpc.useMutation("community.addCommunity", {
-    onSuccess() {
-      utils.invalidateQueries(["community.getAll"]);
-      onSuccessCb();
-    },
-  });
-
-  return mutation.mutate;
-};
-
-export const useToggleCommunityMembershipMutation = (
-  onSuccessCb: () => void
-) => {
-  const utils = trpc.useContext();
-  const mutation = trpc.useMutation(["community.toggleMembership"], {
-    onSuccess() {
-      onSuccessCb();
-      utils.invalidateQueries(["community.getById"]);
-      utils.invalidateQueries(["community.getAll"]);
-      utils.invalidateQueries(["community.popular"]);
-      utils.invalidateQueries(["explore.getSuggestedCommunities"]);
-    },
-  });
-
-  return mutation.mutate;
-};
-
-export const useCommunityMutation = (onSuccessCb: () => void) => {
-  const utils = trpc.useContext();
-  const mutation = trpc.useMutation(["community.update"], {
-    onSuccess() {
-      utils.invalidateQueries(["community.getById"]);
-      onSuccessCb();
-    },
-  });
-
-  return mutation.mutate;
-};
-
-export const useToggleMarkFavouriteCommunityMutation = () => {
-  const utils = trpc.useContext();
-  const mutation = trpc.useMutation(["community.markAsFavourite"], {
-    onSuccess() {
-      utils.invalidateQueries(["community.getById"]);
-      utils.invalidateQueries(["community.getAll"]);
-      utils.invalidateQueries(["explore.getSuggestedCommunities"]);
     },
   });
 
