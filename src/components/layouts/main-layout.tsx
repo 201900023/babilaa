@@ -26,7 +26,7 @@ const MainLayout = ({ children }: LayoutProps) => (
 
 export default MainLayout;
 
-import { FiHome, FiSearch, FiBell, FiUsers } from "react-icons/fi";
+import { FiHome, FiSearch, FiBell, FiUsers, FiBriefcase } from "react-icons/fi";
 import { useRouter } from "next/router";
 import { useState } from "react";
 
@@ -71,12 +71,12 @@ const Footer = () => {
           Icon={FiSearch}
         />
         <Button
-          onClick={() => {}}
-          name="Contacts"
+          onClick={() => { }}
+          name="Jobs"
           active={false}
-          Icon={FiUsers}
+          Icon={FiBriefcase}
         />
-        <Button onClick={() => {}} name="Alerts" active={false} Icon={FiBell} />
+        <Button onClick={() => { push("/notifications"); }} name="Alerts" active={false} Icon={FiBell} />
       </div>
     </>
   );
@@ -99,9 +99,8 @@ const Button = ({
       className={`flex items-center justify-center px-3 flex-col`}
     >
       <div
-        className={`${
-          active ? "bg-[#71F7ED] text-purple-0" : "bg-none"
-        } w-[60px] flex  justify-center py-1 rounded-full `}
+        className={`${active ? "bg-[#71F7ED] text-purple-0" : "bg-none"
+          } w-[60px] flex  justify-center py-1 rounded-full `}
       >
         <Icon size={20} />
       </div>

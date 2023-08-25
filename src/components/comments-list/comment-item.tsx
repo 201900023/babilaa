@@ -3,9 +3,6 @@ import useComment from '@/components/comments-list/use-comment';
 import CommentInput from './comment-input';
 import clsx from 'clsx';
 
-// import Author from '../post-card/author';
-// import CommentFooter from './comment-footer';
-// import CommentContent from './comment-content';
 import DeletedCommenFallback from './deleted-comment-fallback';
 import HeartIcon from '../common/icons/heart';
 import HeartEmptyIcon from '../common/icons/heart-empty';

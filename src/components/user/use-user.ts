@@ -16,7 +16,6 @@ const useUser = () => {
   } = useUserPostsQuery(userId, filter);
 
   const closeModal = () => {
-    // eslint-disable-next-line @typescript-eslint/no-shadow
     const { section, userId, ...restParams } = router.query;
 
     router.replace(

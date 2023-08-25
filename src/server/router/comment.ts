@@ -30,7 +30,6 @@ const commentRouter = createProtectedRouter()
       });
 
       const filteredComments = comments
-        // .filter((comment) => comment._count.children > 0 || !comment.isDeleted)
         .map(({ _count, likes, user, ...commentData }) => ({
           ...commentData,
           user: {

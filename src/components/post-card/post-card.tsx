@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { useRouter } from 'next/router';
-// import { useElementSize } from 'usehooks-ts';
 import { PostDetailsType } from '@/types/db';
 import Author from './author';
 import TagsList from './tags-list';
@@ -68,7 +67,7 @@ const PostCard = ({ post }: PostCardProps) => {
     toast('copied', {
       type: 'success',
     });
-    navigator.clipboard.writeText(`https://college-social-media.vercel.app/post/${post.id}`)
+    navigator.clipboard.writeText(`https://babilaa.vercel.app/post/${post.id}`)
   }
 
   return (

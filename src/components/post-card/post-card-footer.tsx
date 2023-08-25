@@ -70,7 +70,6 @@ const PostCardFooter = ({ post }: PostCardFooterProps) => {
   }
 
   const handleToggleLike = (e: React.MouseEvent) => {
-    // e.preventDefault();
     e.stopPropagation();
     togglePostLike({ postId: post.id });
   };
