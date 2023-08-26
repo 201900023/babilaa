@@ -44,11 +44,6 @@ const Home: NextPage = () => {
           />
         )}
       </MainLayout>
-      {showcasedPostId && (
-        <ModalWrapper title="Post" handleCloseModal={closeShowcasedPost} isBig>
-          <PostDetails postId={showcasedPostId!} />
-        </ModalWrapper>
-      )}
     </>
   );
 };
