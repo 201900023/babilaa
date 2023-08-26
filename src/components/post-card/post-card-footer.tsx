@@ -3,28 +3,28 @@ import { useSession } from "next-auth/react";
 import {
   useRemovePostMutation,
   useTogglePostLikeMutation,
-} from 'src/hooks/mutation';
-import React, { useState } from 'react';
-import { PostDetailsType } from '@/types/db';
-import BookmarkIcon from '@/components/common/icons/bookmark-empty';
-import BookmarkEmptyIcon from '@/components/common/icons/bookmark';
-import ShareIcon from '@/components/common/icons/share';
-import HeartIcon from '@/components/common/icons/heart';
-import HeartEmptyIcon from '@/components/common/icons/heart-empty';
-import PostSharingModal from './post-sharing-modal';
-import { usePostCommentsQuery } from '@/hooks/query';
-import { AiOutlineMessage, AiOutlineDelete } from 'react-icons/ai';
-import CommentsList from '../comments-list/comments-list';
-import Loading from '../common/loading';
-import CommentInput from '../comments-list/comment-input';
-import { useAddCommentMutation } from 'src/hooks/mutation';
-import { FiCopy, FiShare2 } from "react-icons/fi"
-import { GoAlert } from "react-icons/go"
-import { FaRegCommentDots } from "react-icons/fa"
+} from "src/hooks/mutation";
+import React, { useState } from "react";
+import { PostDetailsType } from "@/types/db";
+import BookmarkIcon from "@/components/common/icons/bookmark-empty";
+import BookmarkEmptyIcon from "@/components/common/icons/bookmark";
+import ShareIcon from "@/components/common/icons/share";
+import HeartIcon from "@/components/common/icons/heart";
+import HeartEmptyIcon from "@/components/common/icons/heart-empty";
+import PostSharingModal from "./post-sharing-modal";
+import { usePostCommentsQuery } from "@/hooks/query";
+import { AiOutlineMessage, AiOutlineDelete } from "react-icons/ai";
+import CommentsList from "../comments-list/comments-list";
+import Loading from "../common/loading";
+import CommentInput from "../comments-list/comment-input";
+import { useAddCommentMutation } from "src/hooks/mutation";
+import { FiCopy, FiShare2 } from "react-icons/fi";
+import { GoAlert } from "react-icons/go";
+import { FaRegCommentDots } from "react-icons/fa";
 interface PostCardFooterProps {
   post: PostDetailsType;
 }
-import { Dialog } from '@headlessui/react';
+import { Dialog } from "@headlessui/react";
 
 const PostCardFooter = ({ post }: PostCardFooterProps) => {
   const [comment, setComments] = useState(false);
@@ -36,6 +36,7 @@ const PostCardFooter = ({ post }: PostCardFooterProps) => {
   );
 
   const [isSharing, setIsSharing] = useState(false);
+  const [isBookmark, setIsBookmark] = useState(false);
   const { data: session } = useSession();
   const me = session?.user!;
 
@@ -53,6 +54,7 @@ const PostCardFooter = ({ post }: PostCardFooterProps) => {
 
   const handleToggleBookmark = (e: React.MouseEvent) => {
     e.stopPropagation();
+    setIsBookmark(!isBookmark);
   };
 
   const handleToggleMessages = () => {
@@ -164,7 +166,7 @@ const PostCardFooter = ({ post }: PostCardFooterProps) => {
           className="flex  items-center cursor-pointer w-fit  hover:opacity-50 transition-opacity"
           onClick={handleToggleBookmark}
         >
-          {post.bookmarkedByMe ? <BookmarkEmptyIcon /> : <BookmarkIcon />}
+          {isBookmark ? <BookmarkEmptyIcon /> : <BookmarkIcon />}
           <p className="ml-2">Save</p>
         </button>
 
