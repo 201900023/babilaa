@@ -117,10 +117,11 @@ export const useToggleBookmarkMutation = () => {
 };
 
 export const useTogglePostLikeMutation = () => {
+  //access tool from trpc
   const utils = trpc.useContext();
-
   const mutation = trpc.useMutation('post.toggleLike', {
     onSuccess() {
+      //refresh the app to show changes
       invalidateAll(utils);
     },
   });

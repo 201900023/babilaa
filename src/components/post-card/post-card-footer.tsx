@@ -14,23 +14,17 @@ import HeartIcon from '@/components/common/icons/heart';
 import HeartEmptyIcon from '@/components/common/icons/heart-empty';
 import PostSharingModal from './post-sharing-modal';
 import { usePostCommentsQuery } from '@/hooks/query';
-
 import { AiOutlineMessage, AiOutlineDelete } from 'react-icons/ai';
 import CommentsList from '../comments-list/comments-list';
 import Loading from '../common/loading';
-
 import CommentInput from '../comments-list/comment-input';
 import { useAddCommentMutation } from 'src/hooks/mutation';
-
 import { FiCopy, FiShare2 } from "react-icons/fi"
 import { GoAlert } from "react-icons/go"
-
 import { FaRegCommentDots } from "react-icons/fa"
-
 interface PostCardFooterProps {
   post: PostDetailsType;
 }
-
 import { Dialog } from '@headlessui/react';
 
 const PostCardFooter = ({ post }: PostCardFooterProps) => {
@@ -70,6 +64,7 @@ const PostCardFooter = ({ post }: PostCardFooterProps) => {
   }
 
   const handleToggleLike = (e: React.MouseEvent) => {
+    //called to prevent click event from further propagation
     e.stopPropagation();
     togglePostLike({ postId: post.id });
   };

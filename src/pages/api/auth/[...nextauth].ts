@@ -16,6 +16,7 @@ export const authOptions: NextAuthOptions = {
       return session;
     },
   },
+  //creating user
   events: {
     async createUser(message) {
       if (message.user.name) return;

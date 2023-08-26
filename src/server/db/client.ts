@@ -1,13 +1,13 @@
 import { PrismaClient } from '@prisma/client';
-// eslint-disable-next-line import/extensions
 import { env } from '../../env/server.mjs';
 
 declare global {
-  // eslint-disable-next-line no-var, vars-on-top
+
   var prisma: PrismaClient | undefined;
 }
 
-// eslint-disable-next-line import/prefer-default-export
+//making client as global variable
+//handled by prisma & trpc
 export const prisma =
   global.prisma ||
   new PrismaClient({

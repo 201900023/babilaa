@@ -3,7 +3,6 @@ import { GetServerSidePropsContext } from 'next';
 import Image from 'next/image';
 import FormInput from '@/components/form/form-input';
 import GoogleIcon from '@/components/common/icons/google';
-import GithubIcon from '@/components/common/icons/github';
 import Button from '@/components/common/button';
 import { useForm } from 'react-hook-form'; 
 
