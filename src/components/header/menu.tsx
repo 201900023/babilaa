@@ -11,8 +11,6 @@ import { FaUserAlt } from "react-icons/fa"
 
 
 
-
-
 const Menu = () => {
   const router = useRouter();
 

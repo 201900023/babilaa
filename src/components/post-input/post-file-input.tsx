@@ -26,7 +26,7 @@ const PostFileInput = ({
     name: 'images',
     defaultValue: [],
   });
-
+//remove image
   const removeImage = (imageName: string) => {
     setValue('images', [
       ...selectedImages.filter((image) => image.name !== imageName),

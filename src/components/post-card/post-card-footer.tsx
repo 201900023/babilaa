@@ -57,9 +57,6 @@ const PostCardFooter = ({ post }: PostCardFooterProps) => {
     setIsBookmark(!isBookmark);
   };
 
-  const handleToggleMessages = () => {
-    setIsOpen(!open);
-  };
 
   const handleToggleLike = (e: React.MouseEvent) => {
     //called to prevent click event from further propagation
