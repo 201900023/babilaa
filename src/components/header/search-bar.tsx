@@ -27,9 +27,6 @@ const SearchBar = ({ close }: any) => {
 
   const onSelect = (searchEntry: SearchEntryType) => {
     const userId = searchEntry.id;
-    if (searchEntry.type === SearchType.COMMUNITY) {
-      router.push(`/community/${userId}`);
-    }
     if (searchEntry.type === SearchType.USER) {
       router.push(`/user/${userId}`);
     }
