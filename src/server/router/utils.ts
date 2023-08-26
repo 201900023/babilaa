@@ -2,6 +2,8 @@
 import { Prisma } from '@prisma/client';
 import { prisma } from '../db/client';
 
+//does all the population
+
 export const postDetailsInclude = {
   images: true,
   tags: {

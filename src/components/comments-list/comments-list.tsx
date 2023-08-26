@@ -3,6 +3,7 @@ import React from 'react';
 import { CommentDetailsType } from '@/types/db';
 import CommentItem from './comment-item';
 
+//loop to get comments
 const groupCommentsByParentId = (
   comments: CommentDetailsType[]
 ): Map<string | null, CommentDetailsType[]> => {

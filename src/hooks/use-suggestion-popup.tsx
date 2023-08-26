@@ -2,6 +2,7 @@ import { useRouter } from 'next/router';
 import { useState, useRef, useEffect } from 'react';
 import { useOnClickOutside } from 'usehooks-ts';
 
+//function for going up down select
 const NO_SELECTION_INDEX = -1;
 
 interface UseSuggestionListProps<T> {

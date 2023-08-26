@@ -9,6 +9,8 @@ import exploreRouter from "@/server/router/explore";
 import notificationRouter from "@/server/router/notification";
 import { createRouter } from "./context";
 
+//creating connection with trpc & router
+
 export const appRouter = createRouter()
   .transformer(superjson)
   .merge("post.", postRouter)
