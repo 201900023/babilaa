@@ -4,6 +4,7 @@ import createProtectedRouter from './protected-router';
 import { prisma } from '../db/client';
 import { getUsersListInclude, populateUsersList } from './utils';
 
+//get user details by user id
 const userRouter = createProtectedRouter()
   .query('getById', {
     input: z.object({

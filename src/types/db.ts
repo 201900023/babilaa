@@ -1,5 +1,7 @@
 import { inferQueryOutput } from "src/utils/trpc";
 
+//types of api
+
 export type PostDetailsType = inferQueryOutput<"post.getById">;
 
 export type UserDetailsType = inferQueryOutput<"user.getById">;

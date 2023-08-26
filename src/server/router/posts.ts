@@ -10,6 +10,8 @@ import {
 import createProtectedRouter from './protected-router';
 import { prisma } from '../db/client';
 
+//gets post details
+
 const getCreatedAtCondition = (time: 'day' | 'week') => {
   if (time === 'day') return getDateXDaysAgo(1, new Date());
   if (time === 'week') return getDateXDaysAgo(7, new Date());

@@ -3,6 +3,8 @@ import { prisma } from '@/server/db/client';
 import createProtectedRouter from '@/server/router/protected-router';
 import { NotificationKind } from './types';
 
+
+// api to get notifications details
 const notificationRouter = createProtectedRouter()
   .query('getAll', {
     input: z.object({

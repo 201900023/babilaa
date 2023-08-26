@@ -67,6 +67,7 @@ const PostCardFooter = ({ post }: PostCardFooterProps) => {
     togglePostLike({ postId: post.id });
   };
 
+
   const handleRemovePost = (e: React.MouseEvent) => {
     e.stopPropagation();
     removePost({ postId: post.id });

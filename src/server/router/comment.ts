@@ -2,6 +2,8 @@ import { z } from 'zod';
 import { prisma } from '@/server/db/client';
 import createProtectedRouter from '@/server/router/protected-router';
 
+
+//api for getting comment details
 const commentRouter = createProtectedRouter()
   .query('getAllByPostId', {
     input: z.object({

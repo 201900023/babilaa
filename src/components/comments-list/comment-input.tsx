@@ -18,6 +18,7 @@ const CommentInput = ({ onMessageSubmit }: CommentInputProps) => {
     setCommentMessageValue('');
   };
 
+  
   useEffect(() => {
     if (!textareaRef.current) return;
     textareaRef.current.style.height = '0px';

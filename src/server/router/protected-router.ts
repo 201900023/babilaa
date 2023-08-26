@@ -1,6 +1,8 @@
 import * as trpc from '@trpc/server';
 import { createRouter } from './context';
 
+//if no session user is unable to do functions
+
 function createProtectedRouter() {
   return createRouter().middleware(({ ctx, next }) => {
     if (!ctx.session || !ctx.session.user) {
