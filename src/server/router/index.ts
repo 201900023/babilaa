@@ -3,7 +3,6 @@ import superjson from "superjson";
 import postRouter from "@/server/router/posts";
 import commentRouter from "@/server/router/comment";
 import userRouter from "@/server/router/user";
-import tagRouter from "@/server/router/tag";
 import searchRouter from "@/server/router/search";
 import exploreRouter from "@/server/router/explore";
 import notificationRouter from "@/server/router/notification";
@@ -16,7 +15,6 @@ export const appRouter = createRouter()
   .merge("post.", postRouter)
   .merge("comment.", commentRouter)
   .merge("user.", userRouter)
-  .merge("tags.", tagRouter)
   .merge("search.", searchRouter)
   .merge("explore.", exploreRouter)
   .merge("notification.", notificationRouter);

@@ -1,6 +1,5 @@
 import { PostDetailsType } from "@/types/db";
 import { useState } from "react";
-import PostInput from "@/components/post-input/post-input";
 import { useToggleUserShareMutation } from "@/hooks/mutation";
 import ModalWrapper from "../common/modal-wrapper";
 import PostThumbnail from "../post/post-thumbnail";
@@ -15,8 +14,6 @@ const PostSharingModal = ({
   closeSharingModal,
   sharedPost,
 }: PostSharingModalProps) => {
-  const [isQuoteShare, setIsQuoteShare] = useState(false);
-
   const toggleUserShare = useToggleUserShareMutation(closeSharingModal);
 
   const handleToggleUserShare = () => {
@@ -47,25 +44,16 @@ const PostSharingModal = ({
         </label>
       </div> */}
 
-      {isQuoteShare ? (
-        <div className="bg-primary-0 dark:bg-primary-dark-200 px-5 py-3 rounded-lg">
-          <PostInput
-            sharedPost={sharedPost}
-            submitCallback={closeSharingModal}
-          />
-        </div>
-      ) : (
-        <>
-          {sharedPost.sharedByMe && <p>You already sharing this post </p>}
-          <Button
-            type="button"
-            className="ml-auto block"
-            onClick={handleToggleUserShare}
-          >
-            {sharedPost.sharedByMe ? "Unshare" : "Share"}
-          </Button>
-        </>
-      )}
+      <>
+        {sharedPost.sharedByMe && <p>You already sharing this post </p>}
+        <Button
+          type="button"
+          className="ml-auto block"
+          onClick={handleToggleUserShare}
+        >
+          {sharedPost.sharedByMe ? "Unshare" : "Share"}
+        </Button>
+      </>
       {sharedPost && (
         <div className="mt-5 ">
           <PostThumbnail sharedPost={sharedPost} disableLink />

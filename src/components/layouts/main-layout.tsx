@@ -1,5 +1,4 @@
 import { ReactNode } from "react";
-import TrendingTagsList from "@/components/common/trending-tags-list";
 import { ToastContainer } from "react-toastify";
 
 import Header from "../header/header";
@@ -71,12 +70,19 @@ const Footer = () => {
           Icon={FiSearch}
         />
         <Button
-          onClick={() => { }}
+          onClick={() => {}}
           name="Jobs"
           active={false}
           Icon={FiBriefcase}
         />
-        <Button onClick={() => { push("/notifications"); }} name="Alerts" active={false} Icon={FiBell} />
+        <Button
+          onClick={() => {
+            push("/notifications");
+          }}
+          name="Alerts"
+          active={false}
+          Icon={FiBell}
+        />
       </div>
     </>
   );
@@ -99,8 +105,9 @@ const Button = ({
       className={`flex items-center justify-center px-3 flex-col`}
     >
       <div
-        className={`${active ? "bg-[#71F7ED] text-purple-0" : "bg-none"
-          } w-[60px] flex  justify-center py-1 rounded-full `}
+        className={`${
+          active ? "bg-[#71F7ED] text-purple-0" : "bg-none"
+        } w-[60px] flex  justify-center py-1 rounded-full `}
       >
         <Icon size={20} />
       </div>

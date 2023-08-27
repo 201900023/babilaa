@@ -149,13 +149,6 @@ export const useSearchQuery = (searchPhrase: string) =>
     // enabled: !!searchPhrase,
   });
 
-export const useSearchTagQuery = (searchPhrase: string) =>
-  trpc.useQuery(["tags.getBySearchPhrase", { searchPhrase }], {
-    keepPreviousData: true,
-  });
-
-export const useTrendingTagsQuery = () => trpc.useQuery(["tags.trending"]);
-
 export const useFollowingQuery = (userId: string) =>
   trpc.useQuery(["user.getFollowing", { userId }]);
 
