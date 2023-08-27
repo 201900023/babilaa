@@ -2,6 +2,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import Button from '@/components/common/button';
 
+//if accessing unavailable page
 export default function FourOhFour() {
   return (
     <div className="grid lg:grid-cols-2 min-h-screen">

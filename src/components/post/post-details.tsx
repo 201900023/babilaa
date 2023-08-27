@@ -19,7 +19,7 @@ import MentionsList from '../post-card/mentions-list';
 interface PostDetailsProps {
   postId: string;
 }
-
+//design for post details (after copying link)
 const PostDetails = ({ postId }: PostDetailsProps) => {
   const router = useRouter();
 

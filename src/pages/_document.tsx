@@ -1,5 +1,6 @@
 import { Html, Head, Main, NextScript } from 'next/document';
 
+//connect google fonts
 const MyDocument = () => (
   <Html>
     <Head>

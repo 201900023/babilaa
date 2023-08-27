@@ -22,6 +22,7 @@ const PostContent = ({ register, content, disabled }: PostContentProps) => {
     textareaRef.current.style.height = `${scrollHeight}px`;
   }, [content]);
 
+  //for taking post text input
   return (
     <div className="relative ">
       <textarea
