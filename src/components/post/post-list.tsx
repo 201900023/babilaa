@@ -41,7 +41,7 @@ const PostList = ({ data, fetchNextPage, hasNextPage }: PostListProps) => {
         </div>
       </div>
     );
-
+//looping posts 
   return (
     <div className="space-y-5">
       {data.pages.map((page) => (

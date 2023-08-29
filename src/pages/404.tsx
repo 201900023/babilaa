@@ -18,7 +18,7 @@ export default function FourOhFour() {
         <p className="text-lg lg:text-3xl tracking-wide mb-16 lg:mb-24">
           Something is missing
         </p>
-        <Link href="/" passHref>
+        <Link href="" passHref>
           <Button>Go back home</Button>
         </Link>
       </div>

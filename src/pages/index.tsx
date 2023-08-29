@@ -10,6 +10,8 @@ import Head from "next/head";
 import useHome from "@/components/home/use-home";
 import HomeFallbackCard from "@/components/home/home-fallback-card";
 import { authOptions } from "./api/auth/[...nextauth]";
+import { useSession } from "next-auth/react";
+
 const PostInputView = dynamic(() => import("@/components/post-input-new"), {
   ssr: false,
 });
@@ -23,6 +25,7 @@ const Home: NextPage = () => {
     showcasedPostId,
     isPostsNotExists,
   } = useHome();
+
 
   return (
     <>
