@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { useSearchQuery } from "src/hooks/query";
 import { useRouter } from "next/router";
-import { useDebounce, useReadLocalStorage } from "usehooks-ts";
+import { useDebounce } from "usehooks-ts";
 import useSuggestionList from "src/hooks/use-suggestion-popup";
 import { SearchType } from "src/server/router/types";
 import SearchCard from "@/components/header/search-card";
 import type { SearchEntryType } from "@/types/db";
-import useSearchHistory from "./use-search-history";
 
 const SearchBar = ({ close }: any) => {
   const router = useRouter();
