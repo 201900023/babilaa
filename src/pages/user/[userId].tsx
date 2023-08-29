@@ -20,7 +20,7 @@ const User = () => {
     filters,
     hasNextPage,
     isUserError,
-    postData,
+    postData, 
     section,
     userDetails,
     userId,

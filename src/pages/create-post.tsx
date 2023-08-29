@@ -37,6 +37,7 @@ const CreatePost = () => {
         getInputProps,
         isUploading,
     } = usePostInput({ submitCallback: addPostCallback });
+//addPosCallback submitted as submitCallBack
 
     return (
         <Layout>
@@ -73,7 +74,7 @@ const CreatePost = () => {
                             disabled={isUploading}
                         />
 
-
+                            
                         {finalUploadProgress !== 0 && (
                             <div className="w-full h-1 rounded-sm overflow-hidden my-2">
                                 <div

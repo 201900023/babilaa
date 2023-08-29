@@ -6,6 +6,7 @@ import Layout from '@/components/layouts/main-layout';
 import PostDetails from '@/components/post/post-details';
 import usePost from '@/components/post/use-post';
 
+//post detail page after pasting url
 const PostPage = () => {
   const { postId } = usePost();
 

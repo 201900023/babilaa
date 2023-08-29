@@ -36,6 +36,7 @@ const ButtonFollow = ({
 
   const followUser = useToggleFollowUserMutation(userId, onSuccessCb);
 
+  //button should not render
   if (myId === userId) return null;
 
   return (
