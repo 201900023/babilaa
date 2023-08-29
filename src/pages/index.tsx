@@ -19,11 +19,9 @@ const PostInputView = dynamic(() => import("@/components/post-input-new"), {
 //homepage
 const Home: NextPage = () => {
   const {
-    closeShowcasedPost,
     data,
     fetchNextPage,
     hasNextPage,
-    showcasedPostId,
     isPostsNotExists,
   } = useHome();
 
