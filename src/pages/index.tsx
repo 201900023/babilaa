@@ -16,6 +16,7 @@ const PostInputView = dynamic(() => import("@/components/post-input-new"), {
   ssr: false,
 });
 
+//homepage
 const Home: NextPage = () => {
   const {
     closeShowcasedPost,
