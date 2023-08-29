@@ -192,13 +192,6 @@ export const useSearchUsersQuery = (searchPhrase: string) => {
   });
 };
 
-export const useSuggestedUsersQuery = (limit?: number) =>
-  trpc.useQuery(["explore.getSuggestedUsers", { limit }]);
-
-export const useSuggestedCommunitiesQuery = (limit?: number) => {
-  return trpc.useQuery(["explore.getSuggestedCommunities", { limit }]);
-};
-
 export const useNotificationsQuery = (unread?: boolean) => {
   const utils = trpc.useContext();
   return trpc.useQuery(["notification.getAll", { unread }], {

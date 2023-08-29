@@ -94,7 +94,6 @@ export const useToggleFollowUserMutation = (
 
       utils.invalidateQueries(["user.getFollowers"]);
       utils.invalidateQueries(["user.getFollowing"]);
-      utils.invalidateQueries(["explore.getSuggestedUsers"]);
       onSuccessCb();
     },
   });
@@ -105,7 +104,7 @@ export const useToggleFollowUserMutation = (
 export const useTogglePostLikeMutation = () => {
   //access tool from trpc
   const utils = trpc.useContext();
-  const mutation = trpc.useMutation('post.toggleLike', {
+  const mutation = trpc.useMutation("post.toggleLike", {
     onSuccess() {
       //refresh the app to show changes
       invalidateAll(utils);

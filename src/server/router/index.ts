@@ -4,7 +4,6 @@ import postRouter from "@/server/router/posts";
 import commentRouter from "@/server/router/comment";
 import userRouter from "@/server/router/user";
 import searchRouter from "@/server/router/search";
-import exploreRouter from "@/server/router/explore";
 import notificationRouter from "@/server/router/notification";
 import { createRouter } from "./context";
 
@@ -16,7 +15,6 @@ export const appRouter = createRouter()
   .merge("comment.", commentRouter)
   .merge("user.", userRouter)
   .merge("search.", searchRouter)
-  .merge("explore.", exploreRouter)
   .merge("notification.", notificationRouter);
 
 // export type definition of API
