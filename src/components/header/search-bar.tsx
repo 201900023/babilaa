@@ -15,7 +15,6 @@ const SearchBar = ({ close }: any) => {
   const debouncedSearchPhrase = useDebounce(searchPhrase, 300);
 
   const { data: searchData } = useSearchQuery(debouncedSearchPhrase);
-  const { addSearchHistoryEntry, clearSearchHistory } = useSearchHistory();
 
   useEffect(() => {
     setSearchPhrase("");
@@ -26,7 +25,6 @@ const SearchBar = ({ close }: any) => {
     if (searchEntry.type === SearchType.USER) {
       router.push(`/user/${userId}`);
     }
-    addSearchHistoryEntry(searchEntry);
   };
 
   const data = searchData;
