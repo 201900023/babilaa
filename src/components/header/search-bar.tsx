@@ -17,9 +17,6 @@ const SearchBar = ({ close }: any) => {
   const { data: searchData } = useSearchQuery(debouncedSearchPhrase);
   const { addSearchHistoryEntry, clearSearchHistory } = useSearchHistory();
 
-  const searchHistory =
-    (useReadLocalStorage("searchHistory") as SearchEntryType[]) || [];
-
   useEffect(() => {
     setSearchPhrase("");
   }, [router.asPath]);
@@ -32,7 +29,7 @@ const SearchBar = ({ close }: any) => {
     addSearchHistoryEntry(searchEntry);
   };
 
-  const data = searchPhrase ? searchData : searchHistory.slice(0, 5);
+  const data = searchData;
 
   const { suggestionData, selectedItemIndex, wrapperProps, inputProps } =
     useSuggestionList({
