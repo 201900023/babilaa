@@ -11,7 +11,6 @@ const NotificationsList = () => {
   const {
     isSuccess,
     flattedNotifications,
-
     isNotificationStartFollow,
     isNotificationsPostComment,
   } = useNotificationList();
